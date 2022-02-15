@@ -114,6 +114,7 @@ def iter_organisation(path: Path):
 
         if not "." in content.name:
             yield content, path
+            continue
 
         _, extension = content.name.rsplit(".", 1)
 
