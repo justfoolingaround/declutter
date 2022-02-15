@@ -108,7 +108,7 @@ def iter_organisation(path: Path):
             )
             if not directory_types:
                 continue
-            type_of, _, _ = directory_types[0]
+            type_of, *_ = directory_types[0]
             yield content, get_transfer_route(path, type_of)
             continue
 
