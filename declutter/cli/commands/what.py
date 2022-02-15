@@ -12,11 +12,16 @@ from rich.live import Live
 
 from ... import get_absolute_directory_type
 
+def sizeof_fmt(num, suffix="B", divisor=1024.0):
+    for unit in ["", "Ki", "Mi", "Gi", "Ti", "Pi", "Ei", "Zi"]:
+        if abs(num) < divisor:
+            return "{:3.1f}{}{}".format(num, unit, suffix)
+        num /= divisor
+    return "{:3.1f}Yi{}".format(num, suffix)
 
 @click.command()
 @click.argument("path", required=False, default=".", type=str)
 def declutter_what_command(path):
-    console = rich.get_console()
 
     table = Table(
         title="declutter - File category allocation", title_style="bold magenta"
@@ -32,7 +37,7 @@ def declutter_what_command(path):
         for type_of, path_size in get_absolute_directory_type(Path(path)):
             table.add_row(
                 "/".join(map(str.capitalize, type_of)) or "Other",
-                "{} bytes".format(path_size),
+                "{} ({} bytes)".format(sizeof_fmt(path_size), path_size),
             )
             sizes.append(path_size)
 
