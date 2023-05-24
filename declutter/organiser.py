@@ -102,6 +102,7 @@ def get_directory_type(
             ):
                 parent_skip_list.append(content)
                 beacon[("developer",)].append(content)
+                continue
 
             asset_directory = content / "assets"
             cache_directory = content / "cache"
@@ -117,6 +118,7 @@ def get_directory_type(
                 if directory.exists() and directory.is_dir():
                     parent_skip_list.append(directory)
                     beacon[()].append(directory)
+                    continue
 
             continue
 
