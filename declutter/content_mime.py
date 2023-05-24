@@ -6,6 +6,12 @@ The extensions use regular expressions.
 
 NOT_CATEGORIZED = -1
 
+
+IGNORE = (
+    "url",
+    "lnk",
+)
+
 mimes = {
     "document": {
         "slide": [
@@ -19,7 +25,7 @@ mimes = {
             "ods",
             "csv",
         ],
-        "wordsheet": ["docx?", "pdf", "rtf", "odt", "wp[ds]", "md"],
+        "wordsheet": ["docx?", "pdf", "rtf", "odt", "wp[ds]", "md", "rst"],
         NOT_CATEGORIZED: ["text?", "txt"],
     },
     "archive": [
@@ -43,6 +49,7 @@ mimes = {
             "exe",
             "gadget",
             "jar",
+            "dll",
             "wsf",
         ],
         NOT_CATEGORIZED: {
@@ -91,11 +98,11 @@ mimes = {
         "svg",
         "tif?",
         "cr2",
+        "xcf",
     ],
     "other": [
         "cpl",
         "cur",
-        "dll",
         "dmp",
         "drv",
         "icns",
@@ -108,18 +115,33 @@ mimes = {
     "developer": [
         "py[cdw]?",
         "s?css",
-        "h",
+        "hh?",
         "[tj]s",
-        "c(pp)?",
+        "c(c|pp)?",
         "sh",
         "swift",
         "dart",
         "class",
         "java",
+        "php[345]?",
+        "go",
+        "rb",
+        "y",
+        "vbs?",
+        "pl",
+        "lua",
+        "m",
+        "gitignore",
+        "html?",
+        "sample",
+        "so",
+        "kt",
+        "hlsl",
+        "vcxproj",
     ],
     "configuration": [
         "conf",
-        "in[if]",
+        "in[if]?",
         "reg",
         "ya?ml",
         "json",
@@ -128,5 +150,21 @@ mimes = {
         "toml",
         "sql(ite)?",
         "db",
+        "env",
+        "proto(buf|[2-4])?",
+        "cfg",
+        "properties",
+        "lock",
+        "clang-format",
+        "md5",
+        "gitkeep",
+        "gitattributes",
+        "gitmodules",
+        "gitconfig",
+        "cmake",
+        "makefile",
+        "editorconfig",
+        "manifest",
     ],
+    "font": ["fnt", "fon", "[ot]tf", "woff2?"],
 }

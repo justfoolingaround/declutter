@@ -1,7 +1,7 @@
 <h2 align="center">Declutter</h2>
 
 <center><p>
-An ultimate file organising tool for your messy directories.
+An ultimate file organising tool for your messy directories. <b>Do not use on an already organised place, i.e. your codebases.</b>
 </p></center>
 
 ## Installation
